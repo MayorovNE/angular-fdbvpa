@@ -1,0 +1,32 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+// import my-theme
+@import 'theme.scss';
+
+// import custom componenet themes
+@import 'custom-component-themes.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.my-theme {
+  // use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);
+
+    @include custom-components-theme($my-theme, $my-theme-info, $my-theme-success, $my-theme-warning, $my-theme-error);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    background-color: dark;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
